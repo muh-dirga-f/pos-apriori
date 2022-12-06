@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Simple Point of Sale</title>
+	<title>POS Apriori</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
@@ -45,11 +45,11 @@
 	<div class="wrapper">
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="index2.html" class="logo">
+			<a href="#" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini"><b>C</b>P</span>
+				<span class="logo-mini"><b>P</b>A</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>Simple</b>POS</span>
+				<span class="logo-lg"><b>POS</b> Apriori</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top">
@@ -159,8 +159,16 @@
 								$bulan =  date('m'); ?>
 							<li><a href="<?php echo base_url() ?>index.php/lapharian/index/<?= $tahun ?>/<?= $bulan ?>"><i class="fa fa-circle-o"></i>LAPORAN HARIAN</a></li>
 							<li><a href="<?php echo base_url() ?>index.php/lapbulanan/index/<?= $tahun ?>"><i class="fa fa-circle-o"></i>LAPORAN BULANAN</a></li>
-							<li><a href="<?php echo base_url() ?>index.php/laporan"><i class="fa fa-circle-o"></i>LAPORAN PEMBAYARAN</a></li>
+							<!-- <li><a href="<?php echo base_url() ?>index.php/laporan"><i class="fa fa-circle-o"></i>LAPORAN PEMBAYARAN</a></li> -->
 						</ul>
+					</li>
+
+					<li>
+						<a href="<?php echo base_url() ?>index.php/apriori">
+							<i class="fa fa-folder-o"></i> <span>Apriori</span>
+							<span class="pull-right-container">
+							</span>
+						</a>
 					</li>
 				</ul>
 				<?php else : ?>
@@ -209,12 +217,12 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
-			<section class="content-header">
+			<!-- <section class="content-header">
 				<h1>
 					BilBilWest
 					<small>Control panel</small>
 				</h1>
-			</section>
+			</section> -->
 			<!-- Main content -->
 			<?php echo $contents ?>
 			<!-- /.content -->
@@ -224,7 +232,7 @@
 			<div class="pull-right hidden-xs">
 				<b>Version</b> 2.4.7
 			</div>
-			<strong>Copyright &copy; 2020 <a href="#">Xie Tsun Zao</a>.</strong> All rights
+			<strong>Copyright &copy; 2022.</strong> All rights
 			reserved.
 		</footer>
 		<!-- /.control-sidebar -->

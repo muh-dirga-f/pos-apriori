@@ -135,7 +135,7 @@
             <div class="listitem with-border">
               <div id="sort">
                 <?php echo form_open('penjualan/store'); ?>
-                <div class="col-xs-6">
+                <div class="col-xs-10">
                   <div class="form-group">
                     <label for="kategori" class="control-label">Kategori</label>
                     <div class="input-group">
@@ -150,24 +150,6 @@
                       <span class="input-group-addon">
                         <span class="fa fa-list"></span>
                       </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="form-group">
-                    <label for="ukuran" class="control-label">Ukuran</label>
-                    <div class="input-group">
-                      <select class="form-control" name="ukuran">
-                        <option value=""">Pilih Semua</option>
-                                                <?php
-                                                foreach ($ukuran as $u) {
-                                                  echo "<option value=' $u->id_ukuran'>$u->nama_ukuran</option>";
-                                                }
-                                                ?>
-                                            </select>
-                                            <span class=" input-group-addon">
-                          <span class="fa fa-expand"></span>
-                          </span>
                     </div>
                   </div>
                 </div>
@@ -267,27 +249,8 @@
                       </label>
                       <input type="number" placeholder="Pembayaran" name="bayar" class="form-control" id="bayar" onfocus="startCalculate()" onblur="stopCalc()" required="">
                     </div>
-                    <!-- <div class="form-group">
-                      <label for="pelanggan">Nama Pelanggan</label>
-                      <input type="text" name="pelanggan" placeholder="Nama Pelanggan" class="form-control">
-                    </div> -->
-                    <!-- <div class="form-group">
-                      <label for="note">Catatan</label>
-                      <textarea name="note" placeholder="Catatan untuk transaksi" id="note" class="pa form-control kb-text"></textarea>
-                    </div> -->
                   </div>
                 </div>
-                <!-- <div class="row">
-                  <div class="col-xs-12">
-                    <div class="form-group">
-                      <label for="payment">Metode Pembayaran</label>
-                      <select id="payment" name="metode" class="form-control" style="width:100%;">
-                        <option value="1">Cash</option>
-                        <option value="2">Transfer</option>
-                      </select>
-                    </div>
-                  </div>
-                </div> -->
                 <div class="row" id="rek">
                   <div class="col-xs-7">
                     <div class="form-group">

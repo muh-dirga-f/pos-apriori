@@ -100,7 +100,7 @@ class Model_penjualan extends Ci_Model
 			->get('stok');
 	}
 
-	function filter_barang($kategori, $ukuran, $number, $offset)
+	function filter_barang($kategori, $number, $offset)
 	{
 		if ($kategori != '') {
 			return $this->db->join('barang', 'barang.id_barang = stok.id_barang', 'left')
