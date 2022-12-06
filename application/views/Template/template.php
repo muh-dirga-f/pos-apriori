@@ -126,13 +126,13 @@
 							<li><a href="<?php echo base_url() ?>index.php/barang"><i class="fa fa-circle-o"></i>BARANG</a></li>
 						</ul>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="<?php echo base_url() ?>index.php/operator">
 							<i class="fa fa-user-circle"></i> <span>OPERATOR</span>
 							<span class="pull-right-container">
 							</span>
 						</a>
-					</li>
+					</li> -->
 					<li>
 						<a href="<?php echo base_url() ?>index.php/stok">
 							<i class="fa fa-cubes"></i> <span>STOK</span>
