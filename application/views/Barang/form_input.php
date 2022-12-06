@@ -49,7 +49,7 @@
             <div class="input-group">
               <input type="text" name="harga" id="harga" data-error="harga harus di isi" class="form-control" placeholder="Harga Barang" required>
               <span class="input-group-addon">
-                <span class="fas fa-money">
+                <span class="fa fa-money">
                 </span>
               </span>
             </div>

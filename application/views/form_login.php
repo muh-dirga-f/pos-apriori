@@ -30,7 +30,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <b>Admin</b>LTE
+    <b>POS</b> Apriori
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
