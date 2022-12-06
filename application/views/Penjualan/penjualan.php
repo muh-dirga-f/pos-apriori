@@ -12,106 +12,125 @@
 <section class="content">
   <div class="row">
     <div class="col-md-5">
-      <div class="box box-warning kasir">
-        <div class="box-header with-border">
-          <h3 class="box-title">Kasir</h3>
-          <div class="box-tools pull-right">
-            <span><i class="fa fa-shopping-cart"></i></span>
-          </div>
-        </div>
-        <div class="box-body">
-          <div style="width: 425px;" class="cart">
-            <div id="pos">
-              <div class="well well-sm" id="leftdiv">
-                <div id="lefttop" style="margin-bottom:5px;">
-                  <div class="form-group" style="margin-bottom:5px;">
-                    <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Cari Barang</p>
-                    <form>
-                      <div class="form-group">
-                        <input class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Nama Barang">
-                        <div id="hasilcari"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-warning kasir">
+            <div class="box-header with-border">
+              <h3 class="box-title">Kasir</h3>
+              <div class="box-tools pull-right">
+                <span><i class="fa fa-shopping-cart"></i></span>
+              </div>
+            </div>
+            <div class="box-body">
+              <div style="width: 425px;" class="cart">
+                <div id="pos">
+                  <div class="well well-sm" id="leftdiv">
+                    <div id="lefttop" style="margin-bottom:5px;">
+                      <div class="form-group" style="margin-bottom:5px;">
+                        <p align="right"><a href="#" title="Cari Barang"><i class="fa fa-search"></i></a> Cari Barang</p>
+                        <form>
+                          <div class="form-group">
+                            <input class="form-control" name="idbarang" type="text" onkeyup="showResult(this.value)" placeholder="Ketik Nama Barang">
+                            <div id="hasilcari"></div>
+                          </div>
+                        </form>
                       </div>
-                    </form>
-                  </div>
-                </div>
-                <div id="list-table-div">
-                  <div class="fixed-table-header">
-                    <table class="table table-striped list-table" style="margin:0;">
-                      <thead>
-                        <tr class="info">
-                          <th>Nama Barang</th>
-                          <th style="width: 15%;text-align:center;">Harga</th>
-                          <th style="width: 15%;text-align:center;">Qty</th>
-                          <th style="width: 20%;text-align:center;">Subtotal</th>
-                          <th style="width: 20px;" class="satu absorbing-column"><i class="fa fa-trash-o"></i></th>
-                        </tr>
-                      </thead>
-                      <div>
-                        <div class="card card-body bg-light">
-                          <tbody>
-                            <?php
-                            if (!empty($this->cart->contents())) {
-                              foreach ($this->cart->contents() as $items) { ?>
-                                <tr>
-                                  <td>
-                                    <div class="bg-green badge">
-                                      <span class="sname">
-                                        <?= $items['name']; ?>
-                                      </span>
-                                    </div>
-                                  </td>
-                                  <td align="right">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
-                                  <td style="text-align:center;">
-                                    <form action="<?= base_url('index.php/ubah_qty'); ?>" method="POST">
-                                      <input type="hidden" id="idbrg" name="idbarang" value="<?= $items['id_barang']; ?>">
-                                      <input type="hidden" name="rowid" value="<?= $items['rowid']; ?>">
-                                      <input type="number" class="total" max="500" min="0" value="<?= $items['qty']; ?>" name="qty" size="5">
-                                      <button class="btn btn-primary btn-sm fa fa-check" style="display:none;" title="Simpan">
-                                      </button>
-                                    </form>
-                                  </td>
-                                  <td align="center">
-                                    Rp.<?= $this->fungsi->rupiah($items['subtotal']); ?>
-                                  </td>
-                                  <td align="center">
-                                    <a onclick="location.href = '<?= base_url(); ?>index.php/hapus_cart/<?= $items['rowid']; ?>';" title="Batalkan">
-                                      <i class="fa fa-trash-o tip pointer posdel"></i>
-                                    </a>
-                                  </td>
-                                </tr>
-                              <?php }
-                            } else { ?>
-                            <?php } ?>
-                          </tbody>
-                        </div>
+                    </div>
+                    <div id="list-table-div">
+                      <div class="fixed-table-header">
+                        <table class="table table-striped list-table" style="margin:0;">
+                          <thead>
+                            <tr class="info">
+                              <th>Nama Barang</th>
+                              <th style="width: 15%;text-align:center;">Harga</th>
+                              <th style="width: 15%;text-align:center;">Qty</th>
+                              <th style="width: 20%;text-align:center;">Subtotal</th>
+                              <th style="width: 20px;" class="satu absorbing-column"><i class="fa fa-trash-o"></i></th>
+                            </tr>
+                          </thead>
+                          <div>
+                            <div class="card card-body bg-light">
+                              <tbody>
+                                <?php
+                                if (!empty($this->cart->contents())) {
+                                  foreach ($this->cart->contents() as $items) { ?>
+                                    <tr>
+                                      <td>
+                                        <div class="bg-green badge">
+                                          <span class="sname">
+                                            <?= $items['name']; ?>
+                                          </span>
+                                        </div>
+                                      </td>
+                                      <td align="right">Rp.<?= $this->fungsi->rupiah($items['price']); ?></td>
+                                      <td style="text-align:center;">
+                                        <form action="<?= base_url('index.php/ubah_qty'); ?>" method="POST">
+                                          <input type="hidden" id="idbrg" name="idbarang" value="<?= $items['id_barang']; ?>">
+                                          <input type="hidden" name="rowid" value="<?= $items['rowid']; ?>">
+                                          <input type="number" class="total" max="500" min="0" value="<?= $items['qty']; ?>" name="qty" size="5">
+                                          <button class="btn btn-primary btn-sm fa fa-check" style="display:none;" title="Simpan">
+                                          </button>
+                                        </form>
+                                      </td>
+                                      <td align="center">
+                                        Rp.<?= $this->fungsi->rupiah($items['subtotal']); ?>
+                                      </td>
+                                      <td align="center">
+                                        <a onclick="location.href = '<?= base_url(); ?>index.php/hapus_cart/<?= $items['rowid']; ?>';" title="Batalkan">
+                                          <i class="fa fa-trash-o tip pointer posdel"></i>
+                                        </a>
+                                      </td>
+                                    </tr>
+                                  <?php }
+                                } else { ?>
+                                <?php } ?>
+                              </tbody>
+                            </div>
+                          </div>
+                        </table>
                       </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <table id="totaltbl" class="table table-condensed totals" style="margin-bottom:10px;">
+                      <tr class="info">
+                        <td width="25%">Total Barang</td>
+                        <td class="text-center" style="padding-right:10px;"><span id="count"><?= $this->cart->total_items(); ?></span></td>
+                        <td width="25%" style="font-weight:bold;">Grand Total</td>
+                        <td class="text-right" style="font-weight:bold;" colspan="2"><span id="total"><span id="count">Rp.<?= $this->fungsi->rupiah($this->cart->total()); ?>
+                              <input readonly type="hidden" name="total" id="total' onfocus=" startCalculate()" onblur="stopCalc()" value="<?= $this->cart->total(); ?>" required="">
+                            </span></span></td>
+                      </tr>
                     </table>
                   </div>
-                </div>
-                <div style="clear:both;"></div>
-                <table id="totaltbl" class="table table-condensed totals" style="margin-bottom:10px;">
-                  <tr class="info">
-                    <td width="25%">Total Barang</td>
-                    <td class="text-center" style="padding-right:10px;"><span id="count"><?= $this->cart->total_items(); ?></span></td>
-                    <td width="25%" style="font-weight:bold;">Grand Total</td>
-                    <td class="text-right" style="font-weight:bold;" colspan="2"><span id="total"><span id="count">Rp.<?= $this->fungsi->rupiah($this->cart->total()); ?>
-                          <input readonly type="hidden" name="total" id="total' onfocus=" startCalculate()" onblur="stopCalc()" value="<?= $this->cart->total(); ?>" required="">
-                        </span></span></td>
-                  </tr>
-                </table>
-              </div>
-              <div id="botbuttons" class="col-xs-12 text-center">
-                <div class="row">
-                  <div class="col-xs-6" style="padding: 0;">
-                    <div class="btn-group-vertical btn-block">
-                      <a href="<?php echo base_url() ?>index.php/cancel" class="btn btn-danger btn-block btn-flat" id="reset">Cancel</a>
+                  <div id="botbuttons" class="col-xs-12 text-center">
+                    <div class="row">
+                      <div class="col-xs-6" style="padding: 0;">
+                        <div class="btn-group-vertical btn-block">
+                          <a href="<?php echo base_url() ?>index.php/cancel" class="btn btn-danger btn-block btn-flat" id="reset">Cancel</a>
+                        </div>
+                      </div>
+                      <div class="col-xs-6" style="padding: 0;">
+                        <a href="#" onclick="payment()" class="btn btn-success btn-block btn-flat" id="pembayaran">Pembayaran</a>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-xs-6" style="padding: 0;">
-                    <a href="#" onclick="payment()" class="btn btn-success btn-block btn-flat" id="pembayaran">Pembayaran</a>
-                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-success kasir">
+            <div class="box-header with-border">
+              <h3 class="box-title">Saran Apriori</h3>
+              <div class="box-tools pull-right">
+                <span><i class="fa fa-code-fork"></i></span>
+              </div>
+            </div>
+            <div class="box-body">
+              todo!
             </div>
           </div>
         </div>

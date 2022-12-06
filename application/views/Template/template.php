@@ -165,7 +165,7 @@
 
 					<li>
 						<a href="<?php echo base_url() ?>index.php/apriori">
-							<i class="fa fa-folder-o"></i> <span>Apriori</span>
+							<i class="fa fa-folder-o"></i> <span>APRIORI</span>
 							<span class="pull-right-container">
 							</span>
 						</a>
