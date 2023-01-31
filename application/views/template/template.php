@@ -104,7 +104,6 @@
 				</div>
 				<!-- /.search form -->
 				<!-- sidebar menu: : style can be found in sidebar.less -->
-				<?php if ($this->session->userdata('akses') == 1) : ?>
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">MAIN NAVIGATION</li>
 					<li class="nav-dashboard">
@@ -125,13 +124,6 @@
 							<li class="nav-kategori"><a href="<?php echo base_url() ?>index.php/kategori"><i class="fa fa-circle-o"></i>KATEGORI</a></li>
 							<li class="nav-barang"><a href="<?php echo base_url() ?>index.php/barang"><i class="fa fa-circle-o"></i>BARANG</a></li>
 						</ul>
-					</li>
-					<li class="nav-operator">
-						<a href="<?php echo base_url() ?>index.php/operator">
-							<i class="fa fa-user-circle"></i> <span>OPERATOR</span>
-							<span class="pull-right-container">
-							</span>
-						</a>
 					</li>
 					<li class="nav-stok">
 						<a href="<?php echo base_url() ?>index.php/stok">
@@ -170,46 +162,6 @@
 						</a>
 					</li>
 				</ul>
-				<?php else : ?>
-				<ul class="sidebar-menu" data-widget="tree">
-					<li class="header">MAIN NAVIGATION</li>
-					<li class="nav-dashboard">
-						<a href="<?php echo base_url() ?>dashboard">
-							<i class="fa fa-dashboard"></i> <span>DASHBOARD</span>
-							<span class="pull-right-container">
-							</span>
-						</a>
-					</li>
-					<li class="nav-stok">
-						<a href="<?php echo base_url() ?>index.php/stok">
-							<i class="fa fa-cubes"></i> <span>STOK</span>
-							<span class="pull-right-container">
-							</span>
-						</a>
-					</li>
-					<li class="nav-penjualan">
-						<a href="<?php echo base_url() ?>index.php/penjualan">
-							<i class="fa fa-shopping-cart"></i> <span>PENJUALAN</span>
-							<span class="pull-right-container">
-							</span>
-						</a>
-					</li>
-					<li class="treeview">
-						<a href="#">
-							<i class="fa fa-folder-o"></i> <span>LAPORAN</span>
-							<span class="pull-right-container">
-								<i class="fa fa-angle-left pull-right-container"></i>
-							</span>
-						</a>
-						<ul class="treeview-menu">
-							<?php $tahun =  date('Y');
-								$bulan =  date('m'); ?>
-							<li class="nav-laporan-harian"><a href="<?php echo base_url() ?>index.php/lapharian/index/<?= $tahun ?>/<?= $bulan ?>"><i class="fa fa-circle-o"></i>LAPORAN HARIAN</a></li>
-							<li class="nav-laporan-bulanan"><a href="<?php echo base_url() ?>index.php/lapbulanan/index/<?= $tahun ?>"><i class="fa fa-circle-o"></i>LAPORAN BULANAN</a></li>
-						</ul>
-					</li>
-				</ul>
-				<?php endif; ?>
 			</section>
 			<!-- /.sidebar -->
 		</aside>

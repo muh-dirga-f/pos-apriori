@@ -21,7 +21,6 @@
 	}
 </style>
 <section class="content">
-	<?php if ($this->session->userdata('akses') == 1) : ?>
 	<div class="row">
 		<?php foreach ($box as $info_box) : ?>
 		<div class="col-lg-3 col-xs-6">
@@ -84,47 +83,6 @@
 			</div>
 		</div>
 	</div>
-	<?php else : ?>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="box box-widget widget-user">
-				<div class="widget-user-header bg-green-active">
-					<p style="text-align: center;">
-						<span style="font-family: georgia, palatino; font-size: 15pt;">Selamat datang di BilBilWest</span>
-					</p>
-					<h3 class="widget-user-username"></h3>
-					<h5 class="widget-user-desc"></h5>
-				</div>
-				<div class="widget-user-image">
-					<img class="img-circle" src="<?php echo base_url(); ?>assets/dist/img/bilbil.png">
-				</div>
-				<div class="box-footer">
-					<div class="row">
-						<div class="col-sm-4 border-right">
-							<div class="description-block">
-							</div>
-						</div>
-						<div class="col-sm-4 border-right">
-							<div class="description-block">
-								<h5 class="description-header">Kantor: Kp. Saneke No.49 RT.03 RW.10,Kec.Kutawaringin, Kab.Bandung</h5>
-								<span class="description-text">No.Telp:081809412834, 081321486655</span>
-							</div>
-							<center>
-								<i>Sistem Stok dan Penjualan Barang</i><br>
-							</center>
-						</div>
-						<div class="col-sm-3">
-							<div class="description-block">
-								<h5 class="description-header"></h5>
-								<span class="description-text"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php endif; ?>
 </section>
 <!-- Styles -->
 
